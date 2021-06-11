@@ -86,6 +86,6 @@ resource "null_resource" "default" {
     inline = [
       "sudo apt-get update",
       "sudo apt-get upgrade -y"
-      ]
+    ]
   }
 }
