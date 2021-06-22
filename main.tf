@@ -82,6 +82,10 @@ resource "null_resource" "default" {
     user     = "my_user"
     password = "Som3-P4s$W0rd."
   }
+  # This trigger makes sure to ALWAYS run the provisioner, not very idempotent...
+  triggers = {
+    always_run = "${timestamp()}"
+  }
   provisioner "remote-exec" {
     inline = [
       "sudo apt-get update",
